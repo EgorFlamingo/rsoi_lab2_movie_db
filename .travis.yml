@@ -20,3 +20,6 @@ script:
   - python3 manage.py test
   - cd ../movies
   - python3 manage.py test
+  - cd ../movies
+  - coverage run manage.py test
+  - coverage report
