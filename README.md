@@ -1,1 +1,1 @@
-# rsoi_lab2_movie_db
+[![Build Status](https://travis-ci.org/EgorFlamingo/rsoi_lab2_movie_db.svg?branch=master)](https://travis-ci.org/EgorFlamingo/rsoi_lab2_movie_db)
