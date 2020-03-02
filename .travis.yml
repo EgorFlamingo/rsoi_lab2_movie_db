@@ -8,7 +8,6 @@ before_script:
   - psql -c 'create role movie;' -U postgres
   - psql -c 'alter role movie login;' -U postgres
   - psql -c 'alter user movie createdb;' -U postgres
-
 before_install:
   - gem install bundler
 
