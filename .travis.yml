@@ -23,3 +23,9 @@ script:
   - cd ../movies
   - coverage run manage.py test
   - coverage report
+  - cd ../users
+  - coverage run manage.py test
+  - coverage report
+  - cd ../reviews
+  - coverage run manage.py test
+  - coverage report
