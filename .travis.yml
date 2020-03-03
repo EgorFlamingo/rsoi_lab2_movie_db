@@ -3,23 +3,29 @@ python:
   - "3.7"
 services:
   - postgresql
+
 before_script:
   - psql -c 'create database movie_db;' -U postgres
   - psql -c 'create role movie;' -U postgres
   - psql -c 'alter role movie login;' -U postgres
   - psql -c 'alter user movie createdb;' -U postgres
+
+  - psql -c 'create database user_db;' -U postgres
+  - psql -c 'create role users;' -U postgres
+  - psql -c 'alter role users login;' -U postgres
+  - psql -c 'alter user users createdb;' -U postgres
+
+  - psql -c 'create database reviews_db;' -U postgres
+  - psql -c 'create role reviews;' -U postgres
+  - psql -c 'alter role reviews login;' -U postgres
+  - psql -c 'alter user reviews createdb;' -U postgres
+
 before_install:
   - gem install bundler
 
 install:
   - pip install -r requirements.txt
 script:
-  - cd reviews
-  - python3 manage.py test
-  - cd ../users
-  - python3 manage.py test
-  - cd ../movies
-  - python3 manage.py test
   - cd ../movies
   - coverage run manage.py test
   - coverage report
